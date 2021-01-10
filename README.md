@@ -12,12 +12,12 @@ tail -f fast.log
 ```
 
 # Detecting Site List
-### HTTPS
+### HTTPS (16)
 ```
 www.naver.com                                           
 notion.so     
 mail.google.com    
-www.youtube.com
+www.youtube.com 
 github.com   
 gitlab.com        
 na.leagueoflegends.com
@@ -31,7 +31,7 @@ dreamhack.io
 webhacking.kr  
 www.acmicpc.net
 ```
-### HTTP
+### HTTP (4)
 ```
 warning.or.kr
 www.kyobobook.co.kr
