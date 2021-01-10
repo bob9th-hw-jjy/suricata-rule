@@ -1,6 +1,6 @@
 # Description
 - gilgil's network suricata-rule lab
-- Detect a traffic to specific websites using `suricata`
+- Detect a traffic to specific websites using HTTPS or HTTP with `suricata`
 
 # Specification
 - https://gitlab.com/gilgil/sns/-/wikis/suricata/report-suricata-rule
