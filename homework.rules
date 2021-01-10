@@ -1,0 +1,116 @@
+#########
+# HTTPS # * 16
+#########
+
+# www.naver.com
+alert tcp any any -> 125.209.222.141 443 (msg:"Naver access"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; sid:10001; rev:1;)
+alert tcp any any -> 125.209.222.142 443 (msg:"Naver access"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; sid:10002; rev:1;)
+alert tcp any any -> 223.130.195.95 443 (msg:"Naver access"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; sid:10003; rev:1;)
+alert tcp any any -> 223.130.195.200 443 (msg:"Naver access"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; sid:10004; rev:1;)
+
+# notion.so
+alert tcp any any -> any 443 (msg: "Notion access!"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; content:"www.notion.so"; \
+    sid:10005; rev:1;)
+
+# Gmail
+alert tcp any any -> any 443 (msg: "Gmail access!"; content: "mail.google.com"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; \
+    sid:10006; rev:1;)
+
+# Youtube
+alert tcp any any -> any 443 (msg: "Youtube... Exit NOW!"; content: "youtube.com"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; \
+    sid:10007; rev:1;)
+
+# github
+alert tcp any any -> any 443 (msg: "github :)"; content: "github.com"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; \
+    sid:10008; rev:1;)
+
+# gitlab
+alert tcp any any -> any 443 (msg: "gitlab :)"; content: "gitlab.com"; \
+    content:"|01 00|"; content:"|03 03|"; within:4; \
+    sid:10009; rev:1;)
+
+# League Of Legends
+alert tcp any any -> any 443 (msg: "WHAT ARE YOU DOING!!!!!!!!!!!!! NO MORE LOL"; \
+    content: "na.leagueoflegends.com"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10010; rev:1;)
+
+# sugang.snu.ac.kr
+alert tcp any any -> any 443 (msg: "Sugang SinChung All Clear :)"; \
+    content: "sugang.snu.ac.kr"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10011; rev:1;)
+
+# facebook
+alert tcp any any -> any 443 (msg: "face book"; \
+    content: "facebook.com"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10012; rev:1;)
+
+# twitter
+alert tcp any any -> any 443 (msg: "Twitter"; \
+    content: "twitter.com"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10013; rev:1;)
+
+# twitch
+alert tcp any any -> any 443 (msg: "Twitch TV"; \
+    content: "twitch.tv"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10014; rev:1;)
+
+
+# my tistory
+alert tcp any any -> any 443 (msg: "My Tistory"; \
+    content: "j-jaeyoung.tistory.com"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10016; rev:1;)
+
+# Suricata documents
+alert tcp any any -> any 443 (msg: "My Tistory"; \
+    content: "suricata.readthedocs.io"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10017; rev:1;)
+
+# dreamhack.io
+alert tcp any any -> any 443 (msg: "Dream Hack"; \
+    content: "dreamhack.io"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10018; rev:1;)
+
+# webhacking.kr
+alert tcp any any -> any 443 (msg: "webhacking.kr"; \
+    content: "webhacking.kr"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10019; rev:1;)
+
+# baekjoon
+alert tcp any any -> any 443 (msg: "BaekJoon"; \
+    content: "www.acmicpc.net"; content:"|01 00|"; content:"|03 03|"; within:4;\
+    sid:10020; rev:1;)
+
+
+########
+# HTTP # * 4
+########
+
+# warning.or.kr
+alert tcp any any -> 121.189.57.82 80 (msg: "What are you doing?";\
+    content: "GET / HTTP/1.1"; content: "Host|3A| warning.or.kr"; \
+    sid:20000; rev:1;)
+alert tcp any any -> 121.189.57.82 80 (msg: "What are you doing?";\
+    content: "GET /i1.html HTTP/1.1"; content: "Host|3A| warning.or.kr"; \
+    sid:20001; rev:1;)
+
+# www.kyobobook.co.kr
+alert tcp any any -> 211.189.37.30 80 (msg: "KYOBO books";\
+    content: "GET /index.laf HTTP";\
+    sid:20002; rev:1;)
+
+# pwnable.kr
+alert tcp any any -> any 80 (msg:"pwnable.kr access"; content:"GET / "; \
+    content:"Host: pwnable.kr"; sid:20003; rev:1;)
+
+# afreeca tv
+alert tcp any any -> any 80 (msg: "Afreeca TV"; \
+    content:"Host: afreecatv.com"; content: "GET /"; \
+    sid:20004; rev:1;)
